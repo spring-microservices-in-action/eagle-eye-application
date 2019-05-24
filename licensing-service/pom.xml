@@ -14,6 +14,11 @@
     <artifactId>licensing-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <properties>
+        <docker.image.name>${project.artifactId}</docker.image.name>
+        <docker.image.tag>test</docker.image.tag>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -23,12 +28,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -61,6 +60,12 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.11</version>
+
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
 
                 <configuration>
                     <imageName>${docker.image.name}:${docker.image.tag}</imageName>
