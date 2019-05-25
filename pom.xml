@@ -22,9 +22,9 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.11</version>
+
                 <configuration>
-                    <baseImage>java</baseImage>
-                    <imageName>example</imageName>
+                    <skipDockerBuild>true</skipDockerBuild>
                 </configuration>
             </plugin>
         </plugins>
